@@ -1,3 +1,19 @@
+class Player:
+    def __init__(self, name, health, attack, defense):
+        self.name = name
+        self.health = health
+        self.attack = attack
+        self.defense = defense
+    def player_name(self):
+        return self.player_name
+    
+    def is_alive(self):
+        return self.health > 0
+    
+    def take_damage(self, damage):
+        self.health -= damage
+    
+    
 class Monster:
     def __init__(self, id, name, health, attack, defense, rarity):
         self.id = id
@@ -6,18 +22,13 @@ class Monster:
         self.attack = attack
         self.defense = defense
         self.rarity = rarity
-    # def call_name(self, name, health, attack, defense, rarity):
-    #     self.name = name
-    #     self.health = health
-    #     self.attack = attack
-    #     self.defense = defense
-    #     self.rarity = rarity
 
-# class Monster_call_skills(Monster):
-#     def __init__(self, name, health, attack, defense, rarity):
-#         super().__init__(name, health, attack, defense, rarity)
-#         self.slime_skills = ("뛰어오르기")
-        
+    def take_damage(self, damage):
+            self.health -= damage
+
+    def is_alive(self):
+        return self.health > 0
+                
     def attack_up(self):
         self.attack += 1
 
